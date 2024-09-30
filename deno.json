@@ -1,13 +1,16 @@
 {
   "tasks": {
-    "dev": "deno run -A --unstable-temporal npm:vite",
+    "dev": "vite",
     "build": "vite build --mode client && vite build",
     "preview": "(cd dist && deno serve -R index.js)"
   },
   "imports": {
     "@hono/vite-build": "npm:@hono/vite-build@^1.1.0",
     "@hono/vite-dev-server": "npm:@hono/vite-dev-server@^0.16.0",
+    "@typescript-eslint/parser": "npm:@typescript-eslint/parser@^8.8.0",
     "autoprefixer": "npm:autoprefixer@^10.4.20",
+    "eslint": "npm:eslint@^9.11.1",
+    "eslint-plugin-tailwindcss": "npm:eslint-plugin-tailwindcss@^3.17.4",
     "hono": "npm:hono@^4.6.3",
     "honox": "npm:honox@^0.1.25",
     "postcss": "npm:postcss@^8.4.47",

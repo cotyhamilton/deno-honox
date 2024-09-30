@@ -22,8 +22,11 @@
         "deno",
         "!typescript-language-server",
         "!vtsls",
-        "!eslint"
-      ]
+        "eslint"
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
     },
     "JavaScript": {
       "language_servers": [
