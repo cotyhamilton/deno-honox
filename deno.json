@@ -1,0 +1,31 @@
+{
+  "tasks": {
+    "dev": "deno run -A --unstable-temporal npm:vite",
+    "build": "vite build --mode client && vite build",
+    "preview": "(cd dist && deno serve -R index.js)"
+  },
+  "imports": {
+    "@hono/vite-build": "npm:@hono/vite-build@^1.1.0",
+    "@hono/vite-dev-server": "npm:@hono/vite-dev-server@^0.16.0",
+    "autoprefixer": "npm:autoprefixer@^10.4.20",
+    "hono": "npm:hono@^4.6.3",
+    "honox": "npm:honox@^0.1.25",
+    "postcss": "npm:postcss@^8.4.47",
+    "tailwindcss": "npm:tailwindcss@^3.4.13",
+    "vite": "npm:vite@^5.4.8"
+  },
+  "exclude": [
+    "dist"
+  ],
+  "nodeModulesDir": "auto",
+  "compilerOptions": {
+    "lib": [
+      "esnext",
+      "dom",
+      "deno.ns",
+      "deno.unstable"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  }
+}
