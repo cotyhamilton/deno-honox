@@ -9,5 +9,13 @@ export default defineConfig({
     jsx: "automatic",
     jsxImportSource: "hono/jsx",
   },
-  plugins: [honox({ devServer: { adapter } }), build()],
+  plugins: [
+    honox({
+      client: {
+        input: ["/app/app.css"],
+      },
+      devServer: { adapter },
+    }),
+    build(),
+  ],
 });

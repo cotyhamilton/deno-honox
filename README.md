@@ -170,6 +170,32 @@ export default createRoute((c) => {
 });
 ```
 
+Update `app/routes/_renderer.tsx`
+
+```diff
+- import { Link } from "honox/server";
++ import { Link, Script } from "honox/server";
+...
+<link rel="icon" href="/favicon.ico" />
++ <Link href="/app/app.css" rel="stylesheet" />
+<Script src="/app/client.ts" async />
+```
+
+Update `vite.config.ts`
+
+```diff
+- plugins: [honox({ devServer: { adapter } }), build()],
++ plugins: [
++   honox({
++     client: {
++       input: ["/app/app.css"],
++     },
++     devServer: { adapter },
++   }),
++   build(),
++ ],
+```
+
 ## dev
 
 Install dependencies
