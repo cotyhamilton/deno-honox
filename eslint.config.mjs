@@ -3,18 +3,17 @@ import parser from "@typescript-eslint/parser";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  ...tailwind.configs["flat/recommended"],
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parser: parser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
+    },
+    plugins: {
+      tailwindcss: tailwind,
+    },
+    rules: {
+      "tailwindcss/classnames-order": "warn",
+      "tailwindcss/no-contradicting-classname": "warn",
     },
   },
 ];
